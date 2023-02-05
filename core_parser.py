@@ -5,10 +5,9 @@ from datetime import datetime
 import aiohttp
 from bs4 import BeautifulSoup as bs
 
-from const import URL, finder_attrs
+from const import URI, URL, finder_attrs
 from sql_app.crud import creat_rows
 from utils import convert_date, prepare_datetime
-from variables import URI
 
 
 class Parser:
