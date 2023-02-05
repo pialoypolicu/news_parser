@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mainapp:
+    ports:
+      - '8000:8000'
+    entrypoint: bash -c "uvicorn main:app --host 0.0.0.0 --reload"
+    build: .
+#    image: news_parser:latest
+    restart: always
+    env_file: .env
+    depends_on:
+      - db
+  db:
+    container_name: postgres_news_parser
+    image: postgres:14.1
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - /var/lib/postgresql/data/
+    env_file: .env
+
+networks:
+  default:
+    driver: bridge
