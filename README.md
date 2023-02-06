@@ -19,6 +19,7 @@ fastapi
 pytest
 aiohttp
 beautifulsoup4
+SQLAlchemy
 ```
 
 ##### Запуск проекта из командной строки
@@ -45,7 +46,7 @@ beautifulsoup4
 ##### Запуск проекта в docker
 1. склонировать репозиторий выполнив команду
 > `git clone https://github.com/pialoypolicu/news_parser.git`
-2. создать файл .env  и внести в него конфиденциальную информацию, в соответствии с вашей БД.
+2. создать файл .env и внести в него конфиденциальную информацию, в соответствии с вашей БД.
 `POSTGRES_USER`
 `POSTGRES_PASSWORD`
 `DB_HOST`

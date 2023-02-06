@@ -59,7 +59,6 @@ async def run_parser():
                     await creat_rows(result)
             except aiohttp.ClientConnectorError as error:
                 print(f'Connection error {error}')
-        print('>>> go sleep')
         await asyncio.sleep(600)
 
 

@@ -15,8 +15,8 @@ async def creat_rows(data: list) -> None:
     await db.commit()
 
 
-async def select_query(model: DeclarativeAttributeIntercept, ts_limit: int, db: AsyncSession) -> Sequence[
+async def select_query(model: DeclarativeAttributeIntercept, value: int, db: AsyncSession) -> Sequence[
     Row | RowMapping | Any]:
-    query = select(model).order_by(model.posted.desc()).where(model.posted >= ts_limit)
+    query = select(model).order_by(model.posted.desc()).where(model.posted >= value)
     result = await db.scalars(query)
     return result.all()
