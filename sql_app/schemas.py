@@ -11,6 +11,7 @@ class PostBase(BaseModel):
     uri_picture: str | None
     uri_post: str
     posted: int
+    parsed: int
 
     class Config:
         orm_mode = True

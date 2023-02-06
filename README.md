@@ -4,10 +4,25 @@
 
 Данный проект включает в себя парсер новостей и возможность запроса новостных постов из БД.
 
+Документация доступна при запуске проекта по адресу
+
+http://127.0.0.1/docs
+
+
 #### api anepoint
 _/metro/news/_
 
 params: limit_day: int
+
+#### response schema
+```
+id: int - primary_key
+title: str - Заголовок поста
+uri_picture: str | None - адрес картинки поста
+uri_post: str - адрес постаа
+posted: int - дата побликации поста. UTC, unixtime
+parsed: int - дата когда пост спаршен. local time, unixtime
+```
 
 ex: http://127.0.0.1/metro/news/?limit_day=5
 
